@@ -1,7 +1,7 @@
 {
-  "name": "pi-deep-ralph-review",
+  "name": "pi-multi-agent-review-loop",
   "version": "0.1.0",
-  "description": "Deep PR review extension for pi with parallel reviewers and debate",
+  "description": "Multi-agent PR review extension for pi with parallel reviewers, debate, and iterative fix loops",
   "type": "module",
   "keywords": [
     "pi-package",

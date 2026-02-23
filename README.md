@@ -1,6 +1,6 @@
-# pi-deep-ralph-review
+# pi-multi-agent-review-loop
 
-Deep PR review extension for pi with parallel reviewers and adversarial debate.
+Multi-agent PR review extension for pi with parallel reviewers, adversarial debate, and iterative fix loops.
 
 Spawns two independent AI reviewers (configurable models), has them review the PR diff in parallel, then runs adversarial debate rounds to reach consensus. The "winning" reviewer (whose points were most agreed upon) writes the final report and optionally fixes issues.
 
@@ -15,7 +15,7 @@ Spawns two independent AI reviewers (configurable models), has them review the P
 ### From git
 
 ```bash
-pi install git:github.com/basnijholt/pi-deep-ralph-review
+pi install git:github.com/basnijholt/pi-multi-agent-review-loop
 ```
 
 This also installs [pi-subagents](https://github.com/basnijholt/pi-subagents) as a dependency.
@@ -23,7 +23,7 @@ This also installs [pi-subagents](https://github.com/basnijholt/pi-subagents) as
 ### From local path
 
 ```bash
-pi install ~/repos/pi-deep-ralph-review
+pi install ~/repos/pi-multi-agent-review-loop
 ```
 
 ## Usage
@@ -42,8 +42,8 @@ Both commands run in the background. The consensus report is sent back to the ma
 
 | Env var | Description | Default |
 |---------|-------------|---------|
-| `PR_REVIEW_MODEL_A` | Reviewer A model | `litellm/claude-opus-4-6` |
-| `PR_REVIEW_MODEL_B` | Reviewer B model | `openai-codex/gpt-5.3-codex` |
+| `PR_REVIEW_MODEL_A` | Reviewer A model | `anthropic/claude-opus-4-6` |
+| `PR_REVIEW_MODEL_B` | Reviewer B model | `openai/gpt-5.3-codex` |
 | `PR_REVIEW_THINKING_A` | Thinking level for A | `high` |
 | `PR_REVIEW_THINKING_B` | Thinking level for B | `xhigh` |
 | `PR_REVIEW_MAX_ROUNDS` | Max debate rounds per cycle | `3` |

@@ -10,8 +10,8 @@
  * has full context: the diff, files it read, and the entire debate.
  *
  * Config (env vars):
- *   PR_REVIEW_MODEL_A      — reviewer A model (default: litellm/claude-opus-4-6)
- *   PR_REVIEW_MODEL_B      — reviewer B model (default: openai-codex/gpt-5.3-codex)
+ *   PR_REVIEW_MODEL_A      — reviewer A model (default: anthropic/claude-opus-4-6)
+ *   PR_REVIEW_MODEL_B      — reviewer B model (default: openai/gpt-5.3-codex)
  *   PR_REVIEW_THINKING_A   — thinking level for A (default: high)
  *   PR_REVIEW_THINKING_B   — thinking level for B (default: xhigh)
  *   PR_REVIEW_MAX_ROUNDS   — max debate rounds per cycle (default: 3)
@@ -32,8 +32,8 @@ import {
 // Config
 // ---------------------------------------------------------------------------
 
-const DEFAULT_MODEL_A = "litellm/claude-opus-4-6";
-const DEFAULT_MODEL_B = "openai-codex/gpt-5.3-codex";
+const DEFAULT_MODEL_A = "anthropic/claude-opus-4-6";
+const DEFAULT_MODEL_B = "openai/gpt-5.3-codex";
 const DEFAULT_THINKING_A: ThinkingLevel = "high";
 const DEFAULT_THINKING_B: ThinkingLevel = "xhigh";
 const DEFAULT_MAX_ROUNDS = 3;
