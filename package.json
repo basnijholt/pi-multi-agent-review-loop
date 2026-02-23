@@ -1,0 +1,34 @@
+{
+  "name": "pi-deep-ralph-review",
+  "version": "0.1.0",
+  "description": "Deep PR review extension for pi with parallel reviewers and debate",
+  "type": "module",
+  "keywords": [
+    "pi-package",
+    "pi-extension",
+    "pr-review",
+    "code-review"
+  ],
+  "license": "MIT",
+  "pi": {
+    "extensions": [
+      "./index.ts"
+    ]
+  },
+  "peerDependencies": {
+    "@mariozechner/pi-coding-agent": "*"
+  },
+  "dependencies": {
+    "pi-subagents": "github:basnijholt/pi-subagents"
+  },
+  "devDependencies": {
+    "@mariozechner/pi-coding-agent": "^0.55.0",
+    "@types/node": "^22.10.5",
+    "typescript": "^5.9.3"
+  },
+  "scripts": {
+    "build": "echo 'nothing to build'",
+    "check": "tsc --noEmit",
+    "check:strict": "tsc --noEmit --pretty false"
+  }
+}
