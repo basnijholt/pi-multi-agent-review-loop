@@ -184,7 +184,11 @@ export default function (pi: ExtensionAPI) {
 		activeAgents = [agentA, agentB];
 		renderWidget(ctx);
 
-		const reviewPrompt = `Run \`git diff ${config.mergeBase}\` via bash to get the PR diff. Review it thoroughly — read any files you need for full context. Categorize every finding as **Critical**, **Warning**, or **Suggestion**. End with your verdict: **APPROVE** or **CHANGES REQUIRED**.`;
+		const dismissedClause = dismissedItems.length > 0
+			? `\n\nIMPORTANT: The following items were raised and dismissed as non-issues in earlier review cycles. Do NOT re-raise them:\n${dismissedItems.map((item, i) => `${i + 1}. ${item}`).join("\n")}\n`
+			: "";
+
+		const reviewPrompt = `Run \`git diff ${config.mergeBase}\` via bash to get the PR diff. Review it thoroughly — read any files you need for full context. Categorize every finding as **Critical**, **Warning**, or **Suggestion**. End with your verdict: **APPROVE** or **CHANGES REQUIRED**.${dismissedClause}`;
 
 		// Phase 1: Parallel independent reviews (fresh, no bias)
 		phase = "independent reviews (parallel)";
